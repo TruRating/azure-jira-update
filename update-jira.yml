@@ -9,7 +9,10 @@ parameters:
 
 steps:
     - checkout: JiraDeployInfo
-      path: $(Pipeline.Workspace) 
+    - task: Bash@3
+      inputs:
+        targetType: "inline"
+        script: ls -la
     - task: PowerShell@2
       displayName: Update JIRA status
       inputs:
