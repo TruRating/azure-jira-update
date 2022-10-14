@@ -9,7 +9,7 @@ parameters:
 
 steps:
     - checkout: JiraDeployInfo
-      path: . 
+      path: / 
     - task: PowerShell@2
       displayName: Update JIRA status
       inputs:
