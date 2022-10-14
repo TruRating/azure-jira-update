@@ -3,8 +3,6 @@ parameters:
       type: string
     - name: JiraEnvironment
       type: string
-    - name: EnvironmentName
-      type: string
     - name: workingDirectory
       type: string
       default: $(Build.SourcesDirectory)
@@ -19,7 +17,6 @@ steps:
         filePath: azure-jira-update/DeploymentScript.ps1
         workingDirectory: "${{ parameters.workingDirectory }}"
       env:
-        ENVIRONMENT_NAME: "${{ parameters.EnvironmentName }}"
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
         ATLASSIAN_CLIENT_ID: $(AtlassianClientId)
         ATLASSIAN_CLIENT_SECRET: $(AtlassianClientSecret)
