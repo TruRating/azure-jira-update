@@ -18,7 +18,10 @@ steps:
       inputs:
         pwsh: true
         targetType: filePath
-        filePath: DeploymentScript.ps1
+        ${{ if parameters.workingDirectory }}:
+          filePath: ${{ parameters.workingDirectory }}/DeploymentScript.ps1
+        ${{ else }}:
+          filePath: DeploymentScript.ps1
         workingDirectory: "${{ parameters.workingDirectory }}"
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
