@@ -14,7 +14,7 @@ steps:
       inputs:
         pwsh: true
         targetType: filePath
-        filePath: DeploymentScript.ps1
+        filePath: azure-jira-update/DeploymentScript.ps1
         workingDirectory: "${{ parameters.workingDirectory }}"
       env:
         SYSTEM_ACCESSTOKEN: $(System.AccessToken)
